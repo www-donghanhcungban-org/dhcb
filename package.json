@@ -108,7 +108,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.6.0",
-    "@aws-sdk/client-s3": "^3.1152.0",
+    "@aws-sdk/client-s3": "^3.1173.0",
     "@fontsource-variable/inter": "^5.2.8",
     "@google/genai": "^2.32.0",
     "@sentry/node": "^11.10.0",
