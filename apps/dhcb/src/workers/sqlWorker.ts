@@ -38,7 +38,10 @@ let sqlPromise: Promise<SqlModule> | null = null
 function getSql(id: number): Promise<SqlModule> {
   if (!sqlPromise) {
     scope.postMessage({ type: 'loading', id })
-    sqlPromise = initSqlJs({ locateFile: () => `${scope.location.origin}/sqljs/sql-wasm.wasm` })
+    sqlPromise = initSqlJs({
+      locateFile: () => `${scope.location.origin}/sqljs/sql-wasm.wasm`,
+      useOldExtensionFunctions: false,
+    })
   }
   return sqlPromise
 }

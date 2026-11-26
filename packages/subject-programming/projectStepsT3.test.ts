@@ -317,7 +317,7 @@ it('mọi bước chặng P1/P2 của T3 chạy bằng engine Python', () => {
 // ── Chặng P3: bước web chạy bằng ĐÚNG engine học viên gặp (như projectStepsP3.test.ts) ────────
 const require = createRequire(import.meta.url)
 const wasmPath = require.resolve('sql.js/dist/sql-wasm.wasm')
-const SQL = await initSqlJs({ locateFile: () => wasmPath })
+const SQL = await initSqlJs({ locateFile: () => wasmPath, useOldExtensionFunctions: false })
 
 interface RunOutcome {
   output: string

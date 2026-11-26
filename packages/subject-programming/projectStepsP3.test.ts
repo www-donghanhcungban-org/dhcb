@@ -30,7 +30,7 @@ const P3_UNIT_IDS = new Set(PROGRAMMING_LEVELS.find((l) => l.id === 'p3')!.units
 
 const require = createRequire(import.meta.url)
 const wasmPath = require.resolve('sql.js/dist/sql-wasm.wasm')
-const SQL = await initSqlJs({ locateFile: () => wasmPath })
+const SQL = await initSqlJs({ locateFile: () => wasmPath, useOldExtensionFunctions: false })
 
 interface RunOutcome {
   output: string
