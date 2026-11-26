@@ -293,7 +293,10 @@ describe.skipIf(!hasPython)('T2 chặng P2 — check thật sự BẮT LỖI (ch
 
 // ── Chặng P3 — chấm bằng ĐÚNG engine của từng ngôn ngữ (khuôn projectStepsP3.test.ts) ──────
 const require = createRequire(import.meta.url)
-const SQL = await initSqlJs({ locateFile: () => require.resolve('sql.js/dist/sql-wasm.wasm') })
+const SQL = await initSqlJs({
+  locateFile: () => require.resolve('sql.js/dist/sql-wasm.wasm'),
+  useOldExtensionFunctions: false,
+})
 
 interface RunOutcome {
   output: string

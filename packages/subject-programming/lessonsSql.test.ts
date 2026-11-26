@@ -17,7 +17,7 @@ const SQL_LESSONS = PROGRAMMING_LESSONS.filter((l) => l.language === 'sql')
 // Nạp file .wasm thẳng từ node_modules (không mạng, giống cách app tự host trong dist/).
 const require = createRequire(import.meta.url)
 const wasmPath = require.resolve('sql.js/dist/sql-wasm.wasm')
-const SQL = await initSqlJs({ locateFile: () => wasmPath })
+const SQL = await initSqlJs({ locateFile: () => wasmPath, useOldExtensionFunctions: false })
 
 interface RunOutcome {
   output: string
